@@ -1,0 +1,37 @@
+class ToDo:
+  def __init__(self):
+    self.tasks = []
+    
+  def add_task(self, task):
+    self.tasks.append(task)
+    
+  def remove_task(self, task):
+    self.tasks.remove(task)
+
+  def list_tasks(self):
+    for task in self.tasks:
+      print(task)
+
+if __name__ == '__main__':
+  todo = ToDo()
+  print("Welcome to your To-Do List!")
+  while True:
+    print("Please select an option")
+    print("1. Add a task")
+    print("2. Remove a task")
+    print("3. List all tasks")
+    print("4. Quit")
+
+    choice = input("Enter your choice: ")
+    if choice == "1":
+      task = input("Enter your task: ")
+      todo.add_task(task)
+    elif choice == "2":
+      task = input("Enter the task to remove: ")
+      todo.remove_task(task)
+    elif choice == "3":
+      todo.list_tasks()
+    elif choice == "4":
+      break
+    else:
+      print("Invalid choice. Please try again.")
